@@ -1,0 +1,112 @@
+.commentaire-container {
+    -fx-spacing: 5px;
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-fill-width: true;
+}
+
+.separator-container {
+    -fx-background-color: black;
+    -fx-opacity: 0.2;
+    -fx-padding: 0;
+    -fx-max-height: 1px;
+    -fx-min-height: 1px;
+
+}
+
+.commentaire-hbox {
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+    -fx-fill-width: true;
+}
+
+.commentaire-label {
+    -fx-wrap-text: true;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+}
+
+.commentaire-date {
+    -fx-min-width: 250px;
+    -fx-font-size: 12px;
+    -fx-text-fill: grey;
+}
+
+.commentaire-btn-supprimer {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 100px;
+}
+
+.commentaire-btn-modifier {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.commentaire-btn-sauvegarder {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.commentaire-btn-annuler {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.commentaire-empty {
+    -fx-text-fill: grey;
+    -fx-font-style: italic;
+}
+
+.commentaire-btn-supprimer {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 100px;
+}
+
+.commentaire-btn-modifier {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.commentaire-btn-sauvegarder {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.commentaire-btn-annuler {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-min-width: 80px;
+}
+
+.list-view {
+    -fx-background-color: white;      /* fond de la liste */
+    -fx-control-inner-background: white; /* fond interne pour JavaFX 8+ */
+}
+
+.list-cell {
+    -fx-background-color: white;      /* fond des cellules */
+    -fx-border-color: transparent;    /* enlever les bordures si nécessaires */
+}
+
+.list-cell:filled:selected,
+.list-cell:filled:selected:focused {
+    -fx-background-color: -fx-selection-bar; /* couleur sélection standard ou personnalisée */
+}
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.modifier_client.ControllerModifierClient"
+            prefWidth="1000" prefHeight="800"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- CONTENU CENTRÉ -->
+    <StackPane AnchorPane.topAnchor="0"
+               AnchorPane.bottomAnchor="0"
+               AnchorPane.leftAnchor="0"
+               AnchorPane.rightAnchor="0">
+
+        <VBox spacing="10"
+              maxWidth="700"
+              maxHeight="500"
+              style="-fx-background-color: white;
+                     -fx-padding: 35;
+                     -fx-background-radius: 12;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 4);">
+
+            <!-- TITRE DE LA PAGE -->
+            <Label text="Modifier le Client"
+                   style="-fx-font-size:18px; -fx-font-weight:bold;" />
+
+            <!-- FORMULAIRE CLIENT -->
+            <GridPane hgap="15" vgap="10">
+
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+
+                <!-- LIGNE NOM ET PRENOM -->
+                <Label text="Nom *" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Prénom *" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="tfNom" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPrenom" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label fx:id="lblErrorNom" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorPrenom" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <!-- LIGNE SOCIETE ET EMAIL -->
+                <Label text="Société *" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Email" GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="tfSociete" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfEmail" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label fx:id="lblErrorSociete" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorEmail" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <!-- LIGNE TELEPHONE ET ADRESSE -->
+                <Label text="Téléphone" GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Adresse" GridPane.rowIndex="6" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="tfTelephone" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfAdresse" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label fx:id="lblErrorTelephone" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+
+                <!-- LIGNE VILLE ET CODE POSTAL -->
+                <Label text="Ville" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Code Postal" GridPane.rowIndex="9" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="tfVille" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfCodePostal" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+                <Label GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorCodePostal" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+                <!-- LIGNE PAYS ET STATUT -->
+                <Label text="Pays" GridPane.rowIndex="12" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Statut *" GridPane.rowIndex="12" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <TextField fx:id="tfPays" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbStatut" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+
+                <Label fx:id="lblErrorStatut" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+
+                <!-- LIGNE SEGMENT ET SOURCE D'ACQUISITION -->
+                <Label text="Segment" GridPane.rowIndex="15" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label text="Source D'acquisition" GridPane.rowIndex="15" GridPane.columnIndex="1" style="-fx-font-weight: bold;"/>
+
+                <ComboBox fx:id="cbSegment" promptText="Segment" GridPane.rowIndex="16" GridPane.columnIndex="0" style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <ComboBox fx:id="cbSourceAcquisition" promptText="Source D'acquisition" GridPane.rowIndex="16" GridPane.columnIndex="1" style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label GridPane.rowIndex="17" GridPane.columnIndex="0"/>
+                <Label GridPane.rowIndex="17" GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <!-- ERREUR GLOBALE -->
+            <Label fx:id="lblGlobalError" style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;" visible="false" wrapText="true"/>
+
+            <!-- BOUTONS ANNULER / ENREGISTRER -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Annuler" onAction="#handleCancel" style="-fx-background-color: #ca0e0e; -fx-text-fill: white;"/>
+                <Button text="Enregistrer" fx:id="btnEnregistrer" onAction="#handleUpdateClient" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+            </HBox>
+
+        </VBox>
+
+    </StackPane>
+
+</AnchorPane>

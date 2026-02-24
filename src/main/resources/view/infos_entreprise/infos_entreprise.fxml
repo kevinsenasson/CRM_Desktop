@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="contentPane"
+           fx:controller="view.controller.infos_entreprise.InfosEntrepriseController">
+    <VBox
+          spacing="20"
+          style="-fx-padding:40; -fx-background-color:#f4f6f9;">
+
+        <!-- HEADER AVEC TITRE ET BOUTON RETOUR -->
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Mon Entreprise"
+                   style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Retour"
+                    onAction="#handleReturn"
+                    style="-fx-background-color:#3498db; -fx-text-fill:white; -fx-background-radius:8;"/>
+        </HBox>
+
+        <!-- ERREUR GLOBALE -->
+        <HBox alignment="CENTER">
+            <Label fx:id="lblGlobalError"
+                   style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;"
+                   visible="false"
+                   wrapText="true"/>
+        </HBox>
+
+        <!-- CONTAINER DES CHAMPS DE L’ENTREPRISE -->
+        <VBox fx:id="containerFields" spacing="15"/>
+
+    </VBox>
+</StackPane>
+
+
+

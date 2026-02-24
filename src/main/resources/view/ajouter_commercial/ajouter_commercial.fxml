@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            style="-fx-pref-width: 800; -fx-pref-height: 1000"
+            fx:controller="view.controller.ajouter_commercial.ControllerAjouterCommercial">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20" prefWidth="500" prefHeight="700">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
+
+            <!-- TITRE PRINCIPAL -->
+            <Label text="Bienvenue"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold;" />
+
+            <Label text="Maintenant dite en nous un peu plus sur vous."
+                   style="-fx-font-size: 15px;" />
+
+            <!-- FORMULAIRE -->
+            <GridPane hgap="20" vgap="8" alignment="CENTER">
+
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="100"/>
+                    <ColumnConstraints prefWidth="320"/>
+                </columnConstraints>
+
+                <!-- Ligne NOM -->
+                <Label text="Nom* :"/>
+                <TextField fx:id="tfNom"
+                           GridPane.columnIndex="1"
+                           prefWidth="320"/>
+                <Label fx:id="lblErrorNom"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"/>
+
+                <!-- Ligne PRENOM -->
+                <Label text="Prénom* :" GridPane.rowIndex="2"/>
+                <TextField fx:id="tfPrenom"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorPrenom"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="1"/>
+
+                <!-- Ligne EMAIL -->
+                <Label text="Email* :" GridPane.rowIndex="4"/>
+                <TextField fx:id="tfMail"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorEmail"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="5"
+                       GridPane.columnIndex="1"/>
+
+                <!-- Ligne TELEPHONE -->
+                <Label text="Téléphone* :" GridPane.rowIndex="6"/>
+                <TextField fx:id="tfTelephone"
+                           GridPane.rowIndex="6"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorTelephone"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="7"
+                       GridPane.columnIndex="1"/>
+
+                <!-- Ligne DATE D'EMBAUCHE -->
+                <Label text="Embauché le* :" GridPane.rowIndex="8"/>
+                <DatePicker fx:id="dpDateEmbauche"
+                            GridPane.rowIndex="8"
+                            GridPane.columnIndex="1"
+                            maxWidth="-Infinity"/>
+                <Label fx:id="lblErrorDateEmbauche"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="9"
+                       GridPane.columnIndex="1"/>
+
+                <!-- Ligne OBJ CA -->
+                <Label text="Obj CA par an* (€) :" GridPane.rowIndex="10"/>
+                <TextField fx:id="tfObjCa"
+                           GridPane.rowIndex="10"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorObjCa"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="11"
+                       GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+            <!-- LABEL D'ERREUR GENERAL -->
+            <Label fx:id="lblGlobalError"
+                   style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;"
+                   visible="false"
+                   wrapText="true"/>
+
+            <!-- BOUTON COMMENCER -->
+            <Button fx:id="btnValider"
+                    text="Commencer"
+                    prefWidth="300"
+                    style="-fx-background-color: #2ecc71;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;
+                           -fx-background-radius: 6;" />
+
+        </VBox>
+    </center>
+
+</BorderPane>

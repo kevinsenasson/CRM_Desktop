@@ -1,0 +1,63 @@
+.table-view {
+    -fx-background-color: #f4f6f9;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.button#btnAjouterClient {
+    -fx-background-color: #3498db;
+}
+
+.button#btnAnnuler {
+    -fx-background-color: #ca0e0e;
+}
+
+.button#btnEnregistrer {
+    -fx-background-color: #2ecc71;
+}
+
+#btnAjouterClient {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+}
+
+#btnAjouterClient:hover {
+    -fx-background-color: #2980b9;
+}
+
+.btn-detail {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+.btn-detail:hover {
+    -fx-background-color: #2980b9;
+}
+
+.btn-supprimer {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+.btn-supprimer:hover {
+    -fx-background-color: #c0392b;
+}
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="view.controller.liste_devis.ControllerListeDevis"
+      spacing="15"
+      prefWidth="1000"
+      maxWidth="-Infinity"
+      style="-fx-background-color: #f4f6f9; -fx-padding: 20;">
+
+    <!-- HEADER : TITRE + BOUTON AJOUTER -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <!-- TITRE DE LA PAGE -->
+        <Label fx:id="lblTitre"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <!-- ESPACEUR -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <!-- BOUTON AJOUTER UN DEVIS -->
+        <Button text="Ajouter un devis"
+                fx:id="btnAjouterDevis"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 6;"
+                onAction="#handleAjouterDevis"/>
+    </HBox>
+
+    <!-- SEPARATEUR -->
+    <Separator/>
+
+    <!-- TABLEAU DES DEVIS -->
+    <TableView fx:id="tableDevis" VBox.vgrow="ALWAYS" prefWidth="1000">
+        <!-- COLONNES DU TABLEAU -->
+        <columns>
+            <TableColumn text="Référence" fx:id="colReference"/>
+            <TableColumn text="Date" fx:id="colDate"/>
+            <TableColumn text="Montant" fx:id="colMontant"/>
+            <TableColumn text="Statut" fx:id="colStatut"/>
+            <TableColumn text="Description" fx:id="colDescription"/>
+            <TableColumn text="Actions" fx:id="colActions"/>
+        </columns>
+    </TableView>
+
+    <!-- MESSAGE QUAND AUCUN DEVIS -->
+    <Label fx:id="lblAucunDevis"
+           text="Aucun devis pour ce client."
+           style="-fx-text-fill: #7f8c8d; -fx-font-style: italic;"
+           visible="false"
+           managed="false"/>
+</VBox>

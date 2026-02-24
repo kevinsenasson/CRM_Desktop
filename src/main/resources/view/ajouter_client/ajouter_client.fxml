@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.ajouter_client.ControllerAjouterClient"
+            prefWidth="700" prefHeight="600"
+            style="-fx-background-color: #f4f6f9;">
+
+    <StackPane AnchorPane.topAnchor="0"
+               AnchorPane.bottomAnchor="0"
+               AnchorPane.leftAnchor="0"
+               AnchorPane.rightAnchor="0">
+
+        <VBox spacing="20"
+              maxWidth="550"
+              maxHeight="500"
+              style="-fx-background-color: white;
+                     -fx-padding: 35;
+                     -fx-background-radius: 12;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 5);">
+
+            <!-- TITRE -->
+            <Label text="Ajouter un Client"
+                   style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill: #2c3e50;"
+                   alignment="CENTER"/>
+
+            <!-- FORMULAIRE -->
+            <GridPane hgap="15" vgap="10">
+
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+
+                <!-- Ligne NOM et PRENOM -->
+                <TextField fx:id="tfNom" promptText="Nom*" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <TextField fx:id="tfPrenom" promptText="Prénom*" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label fx:id="lblErrorNom" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorPrenom" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <!-- Ligne SOCIETE et EMAIL -->
+                <TextField fx:id="tfSociete" promptText="Société*" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <TextField fx:id="tfEmail" promptText="Email" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label fx:id="lblErrorSociete" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorEmail" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <!-- Ligne TELEPHONE et ADRESSE -->
+                <TextField fx:id="tfTelephone" promptText="Téléphone" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <TextField fx:id="tfAdresse" promptText="Adresse" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label fx:id="lblErrorTelephone" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Label GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <!-- Ligne VILLE et CODE POSTAL-->
+                <TextField fx:id="tfVille" promptText="Ville" GridPane.rowIndex="6" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <TextField fx:id="tfCodePostal" promptText="Code Postal" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <Label fx:id="lblErrorCodePostal" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <!-- Ligne PAYS et STATUT -->
+                <TextField fx:id="tfPays" promptText="Pays" GridPane.rowIndex="8" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <ComboBox fx:id="cbStatut" promptText="Statut*" GridPane.rowIndex="8" GridPane.columnIndex="1"
+                          style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label fx:id="lblErrorStatut" style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+
+                <!-- Ligne SEGMENT et SRC ACQUISITION -->
+                <ComboBox fx:id="cbSegment" promptText="Segment" GridPane.rowIndex="10" GridPane.columnIndex="0"
+                           style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+                <ComboBox fx:id="cbSourceAcquisition" promptText="Source D'acquisition" GridPane.rowIndex="10" GridPane.columnIndex="1"
+                          style="-fx-background-radius: 6; -fx-border-radius: 6;"/>
+
+                <Label style="-fx-text-fill:#e74c3c; -fx-font-size:11px;" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+
+            </GridPane>
+
+            <!-- LABEL D'ERREUR GENERAL -->
+            <Label fx:id="lblGlobalError"
+                   style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;"
+                   visible="false"
+                   wrapText="true"/>
+
+            <!-- BOUTONS -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Annuler"
+                        fx:id="btnAnnuler"
+                        style="-fx-background-color:#ca0e0e; -fx-text-fill:white;"/>
+                <Button text="Enregistrer"
+                        fx:id="btnEnregistrer"
+                        style="-fx-background-color:#2ecc71; -fx-text-fill:white;"/>
+            </HBox>
+
+        </VBox>
+
+    </StackPane>
+</AnchorPane>
+
+

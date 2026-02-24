@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.detail_client.ControllerDetailClient"
+            style="-fx-background-color: #f4f6f9;">
+
+    <center>
+        <StackPane>
+            <VBox prefWidth="900"
+                  prefHeight="1000"
+                  spacing="20"
+                  VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: white;
+                         -fx-padding: 30;
+                         -fx-background-radius: 8;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 20, 0, 0, 5);">
+
+                <!-- HEADER AVEC TITRE ET BOUTONS -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <VBox>
+                        <Label fx:id="lblPrenomAndNomTitle"
+                               style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblSocieteTitle"
+                               style="-fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Button text="Modifier La Fiche Client"
+                            fx:id="btnModifier"
+                            onAction="#handleModifierClient"
+                            style="-fx-background-color: #3498db;
+                                   -fx-text-fill: white;
+                                   -fx-background-radius: 6;"/>
+
+                    <Button text="Voir les Devis"
+                            fx:id="btnVoirDevis"
+                            onAction="#handleVoirDevis"
+                            style="-fx-background-color: #2ecc71;
+                                   -fx-text-fill: white;
+                                   -fx-background-radius: 6;"/>
+                </HBox>
+
+                <Separator/>
+
+                <!-- INFOS CLIENT -->
+                <GridPane hgap="40" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <!-- Ligne NOM / PRENOM -->
+                    <Label text="Nom" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblNom" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Prénom" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblPrenom" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+
+                    <!-- Ligne SOCIETE / EMAIL -->
+                    <Label text="Société" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblSociete" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Email" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblEmail" GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+
+                    <!-- Ligne TELEPHONE / ADRESSE -->
+                    <Label text="Téléphone" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblTelephone" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Adresse" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblAdresse" GridPane.rowIndex="5" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+
+                    <!-- Ligne VILLE / CODE POSTAL -->
+                    <Label text="Ville" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblVille" GridPane.rowIndex="7" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Code Postal" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblCodePostal" GridPane.rowIndex="7" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+
+                    <!-- Ligne PAYS / STATUT -->
+                    <Label text="Pays" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblPays" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Statut" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblStatut" GridPane.rowIndex="9" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+
+                    <!-- Ligne SEGMENT / SOURCE D'ACQUISITION -->
+                    <Label text="Segment" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblSegment" GridPane.rowIndex="11" GridPane.columnIndex="0" style="-fx-font-size: 16px"/>
+                    <Label text="Source d'acquisition" style="-fx-text-fill: #7f8c8d;" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+                    <Label fx:id="lblSourceAcquisition" GridPane.rowIndex="11" GridPane.columnIndex="1" style="-fx-font-size: 16px"/>
+                </GridPane>
+
+                <Separator/>
+
+                <!-- COMMENTAIRES CLIENT -->
+                <Label text="Commentaires"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                <!-- LISTE DES COMMENTAIRES -->
+                <ListView fx:id="lvCommentaires" />
+
+                <!-- AJOUTER UN NOUVEAU COMMENTAIRE -->
+                <HBox spacing="10">
+                    <TextArea fx:id="tfNouveauCommentaire"
+                              promptText="Ajouter un commentaire..."
+                              prefRowCount="1"
+                              wrapText="true"
+                              HBox.hgrow="ALWAYS"/>
+
+                    <Button text="Ajouter"
+                            fx:id="btnAjouterCommentaire"
+                            onAction="#handleAjouterCommentaire"
+                            style="-fx-background-color: #2ecc71;
+                                   -fx-text-fill: white;
+                                   -fx-background-radius: 6;"/>
+
+                    <Button text="Retour"
+                            fx:id="btnRetour"
+                            onAction="#handleRetour"
+                            style="-fx-background-color: #bdc3c7;
+                                   -fx-background-radius: 6;"/>
+                </HBox>
+
+            </VBox>
+        </StackPane>
+    </center>
+
+    <!-- STYLES -->
+    <stylesheets>
+        <URL value="@detail_client.css"/>
+    </stylesheets>
+
+</BorderPane>

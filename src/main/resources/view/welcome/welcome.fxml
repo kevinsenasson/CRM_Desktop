@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            style="-fx-pref-width: 800; -fx-pref-height: 1000"
+            fx:controller="view.controller.welcome.WelcomeController">
+
+    <!-- Zone centrale : le formulaire est centré -->
+    <center>
+        <VBox alignment="CENTER" spacing="15" prefWidth="500" prefHeight="700">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
+
+            <!-- TITRE PRINCIPAL -->
+            <Label text="Bienvenue"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold;" />
+
+            <!-- Sous-titre / explication -->
+            <Label text="Configurez votre entreprise pour commencer"
+                   style="-fx-font-size: 15px;" />
+
+            <!-- FORMULAIRE -->
+            <GridPane hgap="20" vgap="8" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="100"/>
+                    <ColumnConstraints prefWidth="320"/>
+                </columnConstraints>
+
+                <!-- NOM ENTREPRISE -->
+                <Label text="Nom entreprise* :"/>
+                <TextField fx:id="tfNom"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"
+                           prefWidth="320"/>
+                <Label fx:id="lblErrorNom"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"/>
+
+                <!-- ADRESSE -->
+                <Label text="Adresse* :" GridPane.rowIndex="2"/>
+                <TextField fx:id="tfAdresse"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorAdresse"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="1"/>
+
+                <!-- CODE POSTAL -->
+                <Label text="Code postal* :" GridPane.rowIndex="4"/>
+                <TextField fx:id="tfCodePostal"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorCodePostal"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="5"
+                       GridPane.columnIndex="1"/>
+
+                <!-- VILLE -->
+                <Label text="Ville* :" GridPane.rowIndex="6"/>
+                <TextField fx:id="tfVille"
+                           GridPane.rowIndex="6"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorVille"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="7"
+                       GridPane.columnIndex="1"/>
+
+                <!-- TELEPHONE -->
+                <Label text="Téléphone* :" GridPane.rowIndex="8"/>
+                <TextField fx:id="tfTelephone"
+                           GridPane.rowIndex="8"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorTelephone"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="9"
+                       GridPane.columnIndex="1"/>
+
+                <!-- EMAIL -->
+                <Label text="Email* :" GridPane.rowIndex="10"/>
+                <TextField fx:id="tfEmail"
+                           GridPane.rowIndex="10"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorEmail"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="11"
+                       GridPane.columnIndex="1"/>
+
+                <!-- SIRET -->
+                <Label text="SIRET* :" GridPane.rowIndex="12"/>
+                <TextField fx:id="tfSiret"
+                           GridPane.rowIndex="12"
+                           GridPane.columnIndex="1"/>
+                <Label fx:id="lblErrorSiret"
+                       textFill="#e74c3c"
+                       style="-fx-font-size: 11px;"
+                       GridPane.rowIndex="13"
+                       GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- ERREUR GLOBALE  -->
+            <Label fx:id="lblGlobalError"
+                   style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;"
+                   visible="false"
+                   wrapText="true"/>
+
+            <!-- BOUTON VALIDER -->
+            <Button fx:id="btnValider"
+                    text="Suivant"
+                    prefWidth="300"
+                    style="-fx-background-color: #2ecc71;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;
+                           -fx-background-radius: 6;" />
+
+        </VBox>
+    </center>
+</BorderPane>

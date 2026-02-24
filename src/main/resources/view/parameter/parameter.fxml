@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="contentPane"
+            fx:controller="view.controller.menu.ParameterController"
+            prefWidth="600" prefHeight="700"
+            style="-fx-background-color: #f4f6f9;">
+
+    <VBox spacing="20" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20"
+          style="-fx-padding:40; -fx-background-color:#f4f6f9;">
+
+        <!-- TITRE DE LA PAGE -->
+        <Label text="Paramètres"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <!-- Boîte 1 : Mon entreprise -->
+        <HBox fx:id="boxEntreprise"
+              alignment="CENTER_LEFT"
+              style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd;"
+              spacing="10"
+              onMouseClicked="#openInfosEnterprise"
+              onMouseEntered="#hoverBox"
+              onMouseExited="#exitBox">
+
+            <Label text="Mon entreprise" style="-fx-font-size: 16px; -fx-font-weight: bold;" HBox.hgrow="ALWAYS"/>
+            <Label text=">" style="-fx-font-size: 16px;"/>
+        </HBox>
+
+        <!-- Boîte 2 : Mes infos -->
+        <HBox fx:id="boxInfos"
+              alignment="CENTER_LEFT"
+              style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ddd;"
+              spacing="10"
+              onMouseClicked="#openInfos"
+              onMouseEntered="#hoverBox"
+              onMouseExited="#exitBox">
+
+            <Label text="Mes infos" style="-fx-font-size: 16px; -fx-font-weight: bold;" HBox.hgrow="ALWAYS"/>
+            <Label text=">" style="-fx-font-size: 16px;"/>
+        </HBox>
+
+    </VBox>
+
+</StackPane>

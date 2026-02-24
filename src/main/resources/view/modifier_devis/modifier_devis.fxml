@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="view.controller.modifier_devis.ControllerModifierDevis"
+      spacing="15"
+      style="-fx-background-color: #f4f6f9; -fx-padding: 20; -fx-font-family: 'Arial';">
+
+    <!-- TITRE DE LA PAGE -->
+    <Label text="Modifier le devis"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- FORMULAIRE DEVIS -->
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="70"/>
+        </columnConstraints>
+
+        <!-- LIGNE RÉFÉRENCE -->
+        <Label text="Référence:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfReference" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label fx:id="lblErrorReference"
+               textFill="#e74c3c"
+               style="-fx-font-size: 11px;"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="1"/>
+
+        <!-- LIGNE DATE DE CRÉATION -->
+        <Label text="Date de création:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpDateCreation" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label fx:id="lblErrorDateCreation"
+               textFill="#e74c3c"
+               style="-fx-font-size: 11px;"
+               GridPane.rowIndex="3"
+               GridPane.columnIndex="1"/>
+
+        <!-- LIGNE MONTANT -->
+        <Label text="Montant (€):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="tfMontant" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label fx:id="lblErrorMontant"
+               textFill="#e74c3c"
+               style="-fx-font-size: 11px;"
+               GridPane.rowIndex="5"
+               GridPane.columnIndex="1"/>
+
+        <!-- LIGNE STATUT -->
+        <Label text="Statut:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbStatut" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+        <Label textFill="#e74c3c"
+               style="-fx-font-size: 11px;"
+               GridPane.rowIndex="7"
+               GridPane.columnIndex="1"/>
+
+        <!-- LIGNE DESCRIPTION -->
+        <Label text="Description:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextArea fx:id="tfDescription" GridPane.rowIndex="8" GridPane.columnIndex="1"
+                  prefRowCount="3" wrapText="true"/>
+        <Label textFill="#e74c3c"
+               style="-fx-font-size: 11px;"
+               GridPane.rowIndex="9"
+               GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- ERREUR GLOBALE -->
+    <Label fx:id="lblGlobalError"
+           style="-fx-text-fill:#e74c3c; -fx-font-size:13px; -fx-font-weight:bold;"
+           visible="false"
+           wrapText="true"/>
+
+    <!-- BOUTONS ANNULER / MODIFIER -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Annuler" fx:id="btnAnnuler" style="-fx-background-color: #bdc3c7; -fx-background-radius: 6;"/>
+        <Button text="Modifier" fx:id="btnModifier" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 6;"/>
+    </HBox>
+
+</VBox>

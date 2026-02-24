@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.controller.liste_clients.ControllerListClient"
+            prefHeight="1000.0" prefWidth="1200.0"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- TOP BAR : TITRE + RECHERCHE + BOUTONS -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15;">
+
+            <!-- TITRE DE LA PAGE -->
+            <Label fx:id="lblTitre"
+                   style="-fx-font-size:20px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"
+                   alignment="CENTER"
+                   maxWidth="Infinity"/>
+
+            <!-- BARRE D'ACTIONS : AJOUTER, RECHERCHE, SETTINGS -->
+            <HBox spacing="30" alignment="CENTER_LEFT">
+
+                <!-- BOUTON AJOUTER CLIENT -->
+                <Button text="Ajouter Client"
+                        fx:id="btnAjouterClient"
+                        onAction="#handleAjouterClient"
+                        style="-fx-background-color:#3498db; -fx-text-fill:white; -fx-background-radius:8;"/>
+
+                <!-- CHAMP DE RECHERCHE -->
+                <VBox alignment="CENTER_LEFT">
+                    <Label text="Rechercher :"/>
+                    <TextField fx:id="tfRecherche" promptText="Nom, prénom, société…"/>
+                </VBox>
+
+                <!-- ESPACEUR -->
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- BOUTON SETTINGS -->
+                <Button fx:id="btnSettings"
+                        onAction="#handleSettings"
+                        style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fx:id="imgSettings" fitWidth="35" fitHeight="35">
+                            <Image url="@images/settings.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- TABLEAU DES CLIENTS -->
+    <center>
+        <TableView fx:id="tableClients"
+                   style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #dcdcdc;"
+                   prefHeight="800">
+
+            <!-- COLONNES DU TABLEAU -->
+            <columns>
+                <TableColumn fx:id="colSociete" text="Société" />
+                <TableColumn fx:id="colNom" text="Nom"/>
+                <TableColumn fx:id="colPrenom" text="Prénom"/>
+                <TableColumn fx:id="colEmail" text="Email"/>
+                <TableColumn fx:id="colTelephone" text="Téléphone"/>
+                <TableColumn fx:id="colAdresse" text="Adresse"/>
+                <TableColumn fx:id="colCodePostal" text="Code Postal"/>
+                <TableColumn fx:id="colVille" text="Ville"/>
+                <TableColumn fx:id="colPays" text="Pays"/>
+                <TableColumn fx:id="colDateInscription" text="Date de Contact"/>
+                <TableColumn fx:id="colStatut" text="Statut"/>
+                <TableColumn fx:id="colActions" text="Actions"/>
+            </columns>
+
+            <!-- CSS SPECIFIQUE POUR LE TABLEAU -->
+            <stylesheets>
+                <URL value="@liste-client.css"/>
+            </stylesheets>
+
+        </TableView>
+    </center>
+</BorderPane>
