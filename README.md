@@ -1,4 +1,4 @@
-# CRM Desktop Commercial
+﻿# CRM Desktop Commercial
 
 ## Description
 
@@ -71,16 +71,19 @@ Pour le moment, elle est conçue pour un **seul commercial** et une **seule entr
 ## Commandes utiles
 
 - Lancer l'application :
+
 ```bash
 mvn javafx:run
 ```
 
-- Lancer les tests unitaires et générer le rapport Jacoco : 
+- Lancer les tests unitaires et générer le rapport Jacoco :
+
 ```bash
 mvn clean test
 ```
 
 - Lancer les tests complets avec Surefire (tests d'intégration inclus) :
+
 ```bash
 mvn verify
 ```
@@ -94,7 +97,7 @@ mvn verify
 - La base SQLite est créée en local automatiquement.
 - Les règles de validation sont centralisées pour que le **service et l'UI utilisent les mêmes règles**.
 - Tous les fichiers IntelliJ `.idea` et la base `crm.db` ne doivent pas être pushés sur GitHub.
-- Préférer **Java 21** pour exécuter l'application ; Java 22 ou supérieur peut fonctionner mais n’a pas été testé.
+- Préférer **Java 21** pour exécuter l'application ; Java 22 ou supérieur peut fonctionner mais n'a pas été testé.
 
 ---
 
