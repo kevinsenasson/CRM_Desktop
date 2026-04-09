@@ -28,10 +28,19 @@ Conception et développement d'une application desktop de gestion commerciale (c
 
 Ce projet est un **CRM desktop** développé en **Java 21** et **JavaFX 23.0.2**, conçu pour gérer le suivi des **clients**, **prospects** et **devis** d'un commercial.
 
+atout java21 : potentiel écolution en crm connécter, scalabilité, authentification et sécurité, language populaire idéale pour reprise du code
+inconvénient java21 : temps de développemtn au lancement de l'application
+
+atout javafx : meme language que java21 et convient parfaitement a un projet client lourd comme projet éxécutable
+inconvénient javafx : peu maitriser, temps de déveleloppement
+
 > Remarque : JavaFX fonctionne sans installation supplémentaire sur ce projet.
 
 L'application utilise **SQLite 3.45.1.0** pour stocker les données en local.  
-Pour le moment, elle est conçue pour un **seul commercial** et une **seule entreprise**, sans authentification ni connexion internet.
+Pour le moment, elle est conçue pour un **seul commercial par ordianteur** et une **seule entreprise**, sans authentification ni connexion internet.
+
+atout bdd sqlite : bdd embarqué, pas de téléchargement nécessaire, convient a peu de données
+inconvénient bdd sqlite : moins de type qu'une bdd classique, moins rapide qu'une bdd classique
 
 ---
 
@@ -92,13 +101,14 @@ Le besoin fonctionnel est de permettre à l'utilisateur de :
 - Architecture MVC avec séparation claire entre Modèle, Vue et Contrôleur.
 - Base SQLite locale avec initialisation automatique.
 - Gestion CRUD des clients, devis, commentaires, entreprise, commercial.
-- Jeux de tests unitaires, UI et d'intégration.
+- Jeux de tests unitaires et intégration avec JUnit5 et UI avec testfx.
 
 ### Hors périmètre
 
+- création d'une inteface de statistiques d'un commercial avec une option ia de son emplois du temps journalier
 - Multi-utilisateur complet avec authentification et gestion de rôles.
 - Synchronisation cloud, API web publique, déploiement serveur.
-- Gestion multi-entreprises et multi-commerciaux (la version actuelle cible 1 commercial / 1 entreprise).
+- Gestion multi-entreprises et multi-commerciaux (la version actuelle cible 1 commercial / 1 poste).
 
 ---
 
@@ -106,16 +116,16 @@ Le besoin fonctionnel est de permettre à l'utilisateur de :
 
 ### Contraintes fonctionnelles
 
-- Intégrité des données métier (formats, champs obligatoires, longueurs, montants).
-- Cohabitation entre règles UI et règles métier sans duplication incohérente.
+- Intégrité des données métier (formats, champs obligatoires, longueurs, montants) pour conserver les données et valider les contraintes métier.
+- Cohabitation entre règles UI et règles métier sans duplication incohérente. exemple: methodeffect
 - Navigation simple entre les écrans de création, liste, détail et modification.
 
 ### Contraintes techniques
 
 - Java 21.
 - JavaFX 23.0.2.
-- Maven.
-- SQLite (driver `sqlite-jdbc` 3.45.1.0).
+- Maven. (gestionnaire de dépendances, compiler le projet, exécuter les tests, packager l'application)
+- SQLite.
 - Tests avec JUnit 5, Mockito, TestFX.
 - Qualité et couverture avec JaCoCo.
 
