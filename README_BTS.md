@@ -125,7 +125,7 @@ Le besoin fonctionnel est de permettre à l'utilisateur de :
 - Java 21.
 - JavaFX 23.0.2.
 - Maven. (gestionnaire de dépendances, compiler le projet, exécuter les tests, packager l'application)
-- SQLite.
+- SQLite (driver `sqlite-jdbc` 3.45.1.0).
 - Tests avec JUnit 5, Mockito, TestFX.
 - Qualité et couverture avec JaCoCo.
 
