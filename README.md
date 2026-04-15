@@ -1,5 +1,7 @@
 ﻿# CRM Desktop Commercial
 
+[lien-document-rp-CRMcommercial.pdf](lien-document-rp-CRMcommercial.pdf)
+
 ## Description
 
 Ce projet est un **CRM desktop** développé en **Java 21** et **JavaFX 23.0.2**, conçu pour gérer le suivi des **clients**, **prospects** et **devis** d'un commercial.
