@@ -238,6 +238,10 @@ Le schéma est basé sur 5 tables principales.
 - `client` 1,N `commentaire`
 - Les relations `devis` et `commentaire` vers `client` sont définies avec suppression en cascade (`ON DELETE CASCADE`).
 
+### MCD — Modèle Conceptuel de Données
+
+![MCD CRM Desktop](docs/img/MCD-CRMdesktop.png)
+
 ### Schéma relationnel
 
 ```mermaid
@@ -291,6 +295,10 @@ erDiagram
 ## Architecture
 
 ![Architecture CRM](docs/architecture.png)
+
+## Diagramme de cas d'utilisation (UML)
+
+![Diagramme UML CRM Desktop](docs/img/UML-CRMdesktop.png)
 
 ---
 
