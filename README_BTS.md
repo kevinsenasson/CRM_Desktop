@@ -240,7 +240,7 @@ Le schéma est basé sur 5 tables principales.
 
 ### MCD — Modèle Conceptuel de Données
 
-![MCD CRM Desktop](docs/img/MCD-CRMdesktop.png)
+![MCD CRM Desktop](docs/img/MCD.png)
 
 ### Schéma relationnel
 
@@ -298,7 +298,7 @@ erDiagram
 
 ## Diagramme de cas d'utilisation (UML)
 
-![Diagramme UML CRM Desktop](docs/img/UML-CRMdesktop.png)
+![Diagramme UML CRM Desktop](docs/img/UML.png)
 
 ---
 
